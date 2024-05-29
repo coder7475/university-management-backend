@@ -8,7 +8,7 @@ app.use(express.json());
 app.use(cors());
 
 app.get('/', (req: Request, res: Response) => {
-    res.send('University Management App is Running!');
+  res.send('Exp App is Running!');
 });
 
 // console.log(process.cwd());

@@ -1,20 +1,42 @@
-import globals from 'globals';
+// eslint config .mjs
 import pluginJs from '@eslint/js';
 import tseslint from 'typescript-eslint';
+import tsPlugin from '@typescript-eslint/eslint-plugin';
+import tsParser from '@typescript-eslint/parser';
 
 export default [
-    { languageOptions: { globals: globals.globals } },
+    {
+        files: ['src/**/*.ts', 'src/**/*.tsx'],
+        languageOptions: {
+            // globals: globals.node,
+            globals: {
+                process: 'readonly',
+            },
+            // ecmaVersion: 'latest',
+            sourceType: 'module',
+            parser: tsParser,
+        },
+    },
     pluginJs.configs.recommended,
     ...tseslint.configs.recommended,
     {
-        files: ['src/**/*.ts'],
-        rules: {
-            eqeqeq: 'error',
-            'no-unused-vars': 'error',
-            'no-undef': 'error',
-            'no-trailing-spaces': 'warn',
-            'no-console': 'warn',
-            'no-shadow': 'error',
+        plugins: {
+            '@typescript-eslint': tsPlugin,
         },
+        extends: [
+            'eslint:recommended',
+            'plugin:@typescript-eslint/recommended',
+            'prettier',
+        ],
+        rules: {
+            'no-unused-vars': 'error',
+            'no-unused-expressions': 'error',
+            'prefer-const': 'error',
+            'no-console': 'warn',
+            'no-undef': 'error',
+        },
+    },
+    {
+        ignores: ['node_modules', 'dist'],
     },
 ];

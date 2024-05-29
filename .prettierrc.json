@@ -3,6 +3,5 @@
   "singleQuote": true,
   "arrowParens": "avoid",
   "tabWidth": 4,
-  "bracketSpacing": true,
-  "parser": "typescript"
+  "bracketSpacing": true
 }
