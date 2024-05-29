@@ -1,4 +1,4 @@
-# Node.js Backend Template
+# University Management System
 
 _Tech Used_
 
@@ -11,16 +11,16 @@ _Tech Used_
 1. **Clone the Repository:**
 
    ```bash
-   git clone <repo_url>
+   git clone https://github.com/coder7475/university-management-backend.git
    ```
 
 2. **Navigate to the Project Directory:**
 
    ```bash
-   cd <repo_name>
+   cd university-management-backend
    ```
 
-3. Setup your .env file:
+3. Setup your **.env** file:
 
    ```bash
    PORT=5000
